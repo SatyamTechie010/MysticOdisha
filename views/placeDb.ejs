@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add placeses</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+        <h3>Create a new place</h3>
+        <form action="/mysticOdisha" method="post" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="name" class="form-label">place Name</label>
+                <input type="text" placeholder="Enter title here" name="name" id="name" class="form-control" required>
+                <div class="valid-feedback">Looks Good</div>
+                <div class="invalid-feedback"> name should be valid</div>
+            </div>
+     
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea required type="text" class="form-control" name="description" id="description"  ></textarea>
+                <div class="invalid-feedback"> Description should be valid</div>
+                <div class="valid-feedback">Looks Good</div>
+    
+            </div>
+         
+            <div class="mb-3">
+                <label for="image" class="form-label">Image URL</label>
+                <input type="text" placeholder="paste image URL/link here" name="image" 
+                id="image" class="form-control" >
+    
+            </div>
+
+            <div class="mb-3">
+                <label for="imagebn" class="form-label">Image URL for banner</label>
+                <input type="text" placeholder="paste image URL/link here" name="imagebn" 
+                id="imagebn" class="form-control" >
+    
+            </div>
+       
+    
+            
+            <div class="mb-3 col-md-4">
+                <label for="dist" class="form-label">Dist</label>
+                <input id="dist" placeholder="Enter dist here" name="dist" class="form-control"  required>
+                <div class="invalid-feedback">Enter valid dist</div>
+                <div class="valid-feedback">Looks Good</div>
+            </div>
+    
+                    <div class="mb-3 col-md-8">
+                        <label for="type" class="form-label">Type</label>
+                        <input id="type" type="text" placeholder="Enter type here" name="type" class="form-control"  required>
+                        <div class="invalid-feedback"> type should be valid</div>
+                        <div class="valid-feedback">Looks Good</div>
+                    </div>
+             
+    
+                    
+    
+            <div class="mb-3 ">
+                <label for="location" class="form-label">Location Link</label>
+                <input id="location" type="text" placeholder="Enter location Link here" name="location" class="form-control" required>
+                <div class="invalid-feedback"> Location should be valid</div>
+                <div class="valid-feedback">Looks Good</div>
+            </div>
+
+            <div class="mb-3 ">
+                <label for="bio" class="form-label">Bio/about place</label>
+                <input id="bio" type="text" placeholder="Enter Bio here" name="bio" class="form-control" required>
+                <div class="invalid-feedback"> bio should be valid</div>
+                <div class="valid-feedback">Looks Good</div>
+            </div>
+      
+           
+           
+            <button class="btn btn-outline-danger add-btn">Adding</button>
+          
+        </form>
+        <br>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+    </body>
+
+</html> 
