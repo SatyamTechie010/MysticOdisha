@@ -39,6 +39,7 @@ app.post("/mysticOdisha",async(req,res,next)=>{
         image:image,
         imagebn:imagebn,
         dist:dist,
+        type:type,
         location:location, 
         bio:bio,
     })
@@ -77,4 +78,4 @@ app.delete("/place/:id",async(req,res,next)=>{
 })
 app.listen(3030,()=>{
     console.log("app listing on port 3030");
-})
+}) 
