@@ -14,17 +14,17 @@
 <div class="row">
     <div class="col-8 offset-2">
 <h3>Create a new place</h3>
-<form action="/mysticOdisha" method="post" novalidate class="needs-validation">
+<form action="/mysticOdisha/<%= result._id %>?_method=PUT" method="post" novalidate class="needs-validation">
     <div class="mb-3">
         <label for="name" class="form-label">place Name</label>
-        <input type="text" placeholder="Enter title here" name="name" id="name" class="form-control" required>
+        <input type="text" placeholder="Enter title here" name="name" id="name" class="form-control" required value="<%= result.name %>">
         <div class="valid-feedback">Looks Good</div>
         <div class="invalid-feedback"> name should be valid</div>
     </div>
  
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea required type="text" class="form-control" name="description" id="description"  ></textarea>
+        <textarea required type="text" class="form-control" name="description" id="description"  > <%= result.description %></textarea>
         <div class="invalid-feedback"> Description should be valid</div>
         <div class="valid-feedback">Looks Good</div>
 
@@ -33,14 +33,14 @@
     <div class="mb-3">
         <label for="image" class="form-label">Image URL</label>
         <input type="text" placeholder="paste image URL/link here" name="image" 
-        id="image" class="form-control" >
+        id="image" class="form-control" value="<%= result.image %>" >
 
     </div>
 
     <div class="mb-3">
         <label for="imagebn" class="form-label">Image URL for banner</label>
         <input type="text" placeholder="paste image URL/link here" name="imagebn" 
-        id="imagebn" class="form-control" >
+        id="imagebn" class="form-control" value="<%= result.imagebn %>">
 
     </div>
 
@@ -48,14 +48,14 @@
     
     <div class="mb-3 col-md-4">
         <label for="dist" class="form-label">Dist</label>
-        <input id="dist" placeholder="Enter dist here" name="dist" class="form-control"  required>
+        <input id="dist" placeholder="Enter dist here" name="dist" class="form-control"  required value="<%= result.dist %>">
         <div class="invalid-feedback">Enter valid dist</div>
         <div class="valid-feedback">Looks Good</div>
     </div>
 
             <div class="mb-3 col-md-8">
                 <label for="type" class="form-label">Type</label>
-                <input id="type" type="text" placeholder="Enter type here" name="type" class="form-control"  required>
+                <input id="type" type="text" placeholder="Enter type here" name="type" class="form-control"  required value="<%= result.type %>">
                 <div class="invalid-feedback"> type should be valid</div>
                 <div class="valid-feedback">Looks Good</div>
             </div>
@@ -65,14 +65,14 @@
 
     <div class="mb-3 ">
         <label for="location" class="form-label">Location Link</label>
-        <input id="location" type="text" placeholder="Enter location Link here" name="location" class="form-control" required>
+        <input id="location" type="text" placeholder="Enter location Link here" name="location" class="form-control" required value="<%= result.location %>">
         <div class="invalid-feedback"> Location should be valid</div>
         <div class="valid-feedback">Looks Good</div>
     </div>
 
     <div class="mb-3 ">
         <label for="bio" class="form-label">Bio/about place</label>
-        <input id="bio" type="text" placeholder="Enter Bio here" name="bio" class="form-control" required>
+        <input id="bio" type="text" placeholder="Enter Bio here" name="bio" class="form-control" required value="<%= result.bio %>">
         <div class="invalid-feedback"> bio should be valid</div>
         <div class="valid-feedback">Looks Good</div>
     </div>
@@ -80,7 +80,7 @@
    
     
    
-    <button class="btn btn-outline-danger add-btn">Adding</button>
+    <button class="btn btn-outline-danger add-btn">Edit</button>
   
 </form>
 <br>
