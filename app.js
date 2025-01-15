@@ -12,7 +12,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname,"/public")));
 // app.engine("ejs",ejsMate);   
 
-// Databases mysticplace
+// Databases mysticplace  
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/mysticplace');
      
@@ -24,8 +24,8 @@ app.get("/",async(req,res,next)=>{
     let results=await Place.find({});
     res.render("index.ejs",{results})
 
-
-})
+ 
+}) 
 
 
 app.get("/addDb",(req,res,next)=>{ 
@@ -44,6 +44,11 @@ app.post("/mysticOdisha",async(req,res,next)=>{
     })
    await s1.save()
     res.redirect("/addDb")
+})
+
+app.get("/place/:id/edit",(req,res,next)=>{
+    let {id}=req.params;
+    res.render("editDb.ejs")
 })
 
 app.listen(3030,()=>{
