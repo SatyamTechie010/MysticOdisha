@@ -3,6 +3,7 @@ const path=require('path');
 const mongoose=require('mongoose');
 var methodOverride = require('method-override')
 const Place =require("./model/place.js");
+const Festival =require("./model/festival.js");
 let app=express();
 
 app.set("view engine","ejs");
@@ -19,7 +20,16 @@ async function main() {
   }
   main().then(res=>{console.log("connection to db")}).catch(err => console.log(err));
 
-app.get("/",async(req,res,next)=>{
+  //home page
+  app.get("/",(req,res,next)=>{
+    res.render("home.ejs")
+  })
+  app.get("/foo",(req,res,next)=>{
+    res.render("./layout/boilerplate.ejs")
+  })
+  
+  //backend for adding places
+app.get("/BackendAddPlace",async(req,res,next)=>{
     
     let results=await Place.find({});
     res.render("index.ejs",{results})
@@ -66,7 +76,7 @@ app.put("/mysticOdisha/:id",async(req,res,next)=>{
     await Place.findByIdAndUpdate(id,{bio:bio})
 
     console.log("success");
-    res.redirect("/")
+    res.redirect("/BackendAddPlace")
   
 })
 
@@ -74,7 +84,7 @@ app.put("/mysticOdisha/:id",async(req,res,next)=>{
 app.delete("/place/:id",async(req,res,next)=>{
     let {id}=req.params;
     await Place.findByIdAndDelete(id)
-    res.redirect("/")
+    res.redirect("/BackendAddPlace")
 })
 app.listen(3030,()=>{
     console.log("app listing on port 3030");
