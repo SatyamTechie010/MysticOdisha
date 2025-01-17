@@ -39,10 +39,17 @@ app.get("/BackendAddPlace",async(req,res,next)=>{
 
     let results=await Place.find({});
     res.render("index.ejs",{results})
-
  
 }) 
+<<<<<<< Updated upstream
  
+=======
+class name {
+    constructor(parameters) {
+        
+    }
+}
+>>>>>>> Stashed changes
 
 app.get("/addDb",(req,res,next)=>{ 
     res.render("placeDb.ejs")
@@ -90,7 +97,11 @@ app.put("/mysticOdisha/:id",async(req,res,next)=>{
 app.delete("/place/:id",async(req,res,next)=>{
     let {id}=req.params;
     await Place.findByIdAndDelete(id)
+<<<<<<< Updated upstream
     res.redirect("/BackendAddPlace")
+=======
+    res.redirect("/") 
+>>>>>>> Stashed changes
 })
 app.listen(3030,()=>{
     console.log("app listing on port 3030");
