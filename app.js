@@ -22,6 +22,7 @@ async function main() {
 
   //home page
   app.get("/",(req,res,next)=>{
+   
     res.render("home.ejs")
   })
   app.get("/foo",(req,res,next)=>{
@@ -30,13 +31,18 @@ async function main() {
   
   //backend for adding places
 app.get("/BackendAddPlace",async(req,res,next)=>{
-    
+    let {dist}=req.query;
+    if(dist){
+        let results=await Place.find({dist:dist});
+        res.render("index.ejs",{results})
+    }
+
     let results=await Place.find({});
     res.render("index.ejs",{results})
 
  
 }) 
-
+ 
 
 app.get("/addDb",(req,res,next)=>{ 
     res.render("placeDb.ejs")

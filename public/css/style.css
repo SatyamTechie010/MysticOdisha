@@ -2,6 +2,7 @@ body{
     padding-left: 2.5rem;
 
 }
+/* index.ejs */
 .all{
     display: inline-flex;
     flex-wrap: wrap;
@@ -31,4 +32,17 @@ body{
 .edit-btn{
     position: absolute;
     left: 2rem;
+}
+.head{
+    display:inline-flex;
+    height: 3rem;
+    width: 80vw;
+    margin: 2rem;
+    justify-content: space-around;
+}
+.searchPlace{
+    width: 17rem;
+    border-radius: 13px;
+    height: 2.3rem;
+    padding: 10px;
 }
